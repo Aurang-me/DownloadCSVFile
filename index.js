@@ -1,8 +1,8 @@
 const express = require("express");
-const {Parser} = require("json2csv");
-const fs = require("fs");
+// const {Parser} = require("json2csv");
+// const fs = require("fs");
 const app = express();
-const json2csvParser = new Parser();
+// const json2csvParser = new Parser();
 app.listen(3000,()=>{
     console.log("app is listening at port 3000");
 });
@@ -34,20 +34,20 @@ var information = [
 ];
 
 
-const parsedData = json2csvParser.parse(information);
-console.log(parsedData);
-fs.writeFile("data.xlsx",parsedData,(err)=>{
-if(err){
-    throw err;
-}
-console.log("file saved")
-})
+// const parsedData = json2csvParser.parse(information);
+// console.log(parsedData);
+// fs.writeFile("data.xlsx",parsedData,(err)=>{
+// if(err){
+//     throw err;
+// }
+// console.log("file saved")
+// })
 
-app.get('/get-csv',(req,res)=>{
-    res.attachment("data.xlsx");
-    res.status(200).send(parsedData);
+// app.get('/get-csv',(req,res)=>{
+//     res.attachment("data.xlsx");
+//     res.status(200).send(parsedData);
 
-});
+// });
 app.get('/',(req,res)=>{
     res.status(200).send("response from the server....");
 
